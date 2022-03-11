@@ -12,8 +12,6 @@
         fod.complete(function (data) {
             // Fetch the properties from the JSON response and write to the page.
             addText("DeviceType: " + data.device["devicetype"]);
-            addText("SetHeaderHardwareAccept-CH: " + data.device["setheaderhardwareaccept-ch"]);
-            addText("SetHeaderBrowserAccept-CH: " + data.device["setheaderbrowseraccept-ch"]);
             addText("IsMobile: " + data.device["ismobile"]);
             addText("IsSmartPhone: " + data.device["issmartphone"]);
             addText("MaxNumberOfSIMCards: " + data.device["maxnumberofsimcards"]);
