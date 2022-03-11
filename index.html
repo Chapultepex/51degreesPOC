@@ -41,7 +41,6 @@
 
     buttonClicked = function() {
         fod.complete(function (data) {
-            document.print("GEO LOCALIZACION") 
             addText("State (by lat/lon): " + data.location["state"]);
             addText("Country (by lat/lon): " + data.location["country"]);
             addText("CountryCode (by lat/lon): " + data.location["countrycode"]);
