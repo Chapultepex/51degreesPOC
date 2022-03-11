@@ -41,18 +41,12 @@
 
     buttonClicked = function() {
         fod.complete(function (data) {
-            addText("Region (by lat/lon): " + data.location["region"]);
+            document.getElementById("htmlExampleOutput").innerHTML+=text + "GEO LOCALIZACION<br>";
             addText("State (by lat/lon): " + data.location["state"]);
             addText("Country (by lat/lon): " + data.location["country"]);
             addText("CountryCode (by lat/lon): " + data.location["countrycode"]);
             addText("County (by lat/lon): " + data.location["county"]);
             addText("Town (by lat/lon): " + data.location["town"]);
-            addText("Town (by lat/lon): " + data.location_digitalelement["town"]);
-            addText("County (by lat/lon): " + data.location_digitalelement["county"]);
-            addText("Region (by lat/lon): " + data.location_digitalelement["region"]);
-            addText("State (by lat/lon): " + data.location_digitalelement["state"]);
-            addText("ZipCode (by lat/lon): " + data.location_digitalelement["zipcode"]);
-            addText("Country (by lat/lon): " + data.location_digitalelement["country"]);
         }, 'location,location_digitalelement');
     }
 
