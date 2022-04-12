@@ -2,7 +2,6 @@
 <html>
     <body>
         <h1>51Degrees cloud example</h1>
-        <button style="height:70px;width:200px" type="button" onclick="buttonClicked()"><H2>Click !! VER MI LOCALIZACION</H2></button>
         <div id="htmlExampleOutput"></div>
     </body>
 </html>
@@ -17,11 +16,7 @@
             addText("MaxNumberOfSIMCards: " + data.device["maxnumberofsimcards"]);
             addText("SupportedSIMCardTypes: " + data.device["supportedsimcardtypes"]);
             addText("SupportedBearers: " + data.device["supportedbearers"]);
-            addText("Prompts: " + data.device["prompts"]);
-            addText("PriceBand: " + data.device["priceband"]);
             addText("IsWebApp: " + data.device["iswebapp"]);
-            addText("GeoLocation: " + data.device["geolocation"]);
-            addText("JavascriptPreferredGeoLocApi: " + data.device["javascriptpreferredgeolocapi"]);
             addText("HardwareVendor: " + data.device["hardwarevendor"]);
             addText("HardwareModel: " + data.device["hardwaremodel"]);
             addText("HardwareName: " + data.device["hardwarename"]);
@@ -31,20 +26,9 @@
             addText("BrowserName: " + data.device["browsername"]);
             addText("BrowserVersion: " + data.device["browserversion"]);
             addText("PlatformVendor: " + data.device["platformvendor"]);
-            addText("SetHeaderPlatformAccept-CH: " + data.device["setheaderplatformaccept-ch"]);
             addText("PlatformName: " + data.device["platformname"]);
             addText("PlatformVersion: " + data.device["platformversion"]);
         });
-    }
-
-    buttonClicked = function() {
-        fod.complete(function (data) {
-            addText("State (by lat/lon): " + data.location["state"]);
-            addText("Country (by lat/lon): " + data.location["country"]);
-            addText("CountryCode (by lat/lon): " + data.location["countrycode"]);
-            addText("County (by lat/lon): " + data.location["county"]);
-            addText("Town (by lat/lon): " + data.location["town"]);
-        }, 'location,location_digitalelement');
     }
 
     addText = function(text) {
