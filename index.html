@@ -30,6 +30,16 @@
             addText("PlatformVersion: " + data.device["platformversion"]);
         });
     }
+    
+        buttonClicked = function() {
+        fod.complete(function (data) {
+            addText("State (by lat/lon): " + data.location["state"]);
+            addText("Country (by lat/lon): " + data.location["country"]);
+            addText("CountryCode (by lat/lon): " + data.location["countrycode"]);
+            addText("County (by lat/lon): " + data.location["county"]);
+            addText("Town (by lat/lon): " + data.location["town"]);
+        }, 'location');
+    }
 
     addText = function(text) {
         document.getElementById("htmlExampleOutput").innerHTML+=text + "<br>";
