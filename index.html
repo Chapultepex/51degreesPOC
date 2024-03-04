@@ -4,35 +4,56 @@
         <meta http-equiv="Delegate-CH" content="sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com"/>
     </head>
     <body>
-        <h1>51Degrees cloud example New</h1>
+        <h1>51Degrees cloud example NewAgent</h1>
         <button type="button" onclick="buttonClicked()">Use my location</button>
         <div id="htmlExampleOutput"></div>
     </body>
-    <script async src="https://cloud.51degrees.com/api/v4/XJVAAAJGSAAAABJCE22GAMSAD5ASUCUS77RZ32J2B46L6J5HHPMT5TV2BABAKGKGR2XCFYA9MNEBVLJEQA2V28KKV7RZL.js"></script>
+    <script async src="https://cloud.51degrees.com/api/v4/AQS-a-UB4UA16EQ83Eg.js"></script>
     <script type="text/javascript">
         window.onload = function() {
             fod.complete(function (data) {
                 // Fetch the properties from the JSON response and write to the page.
-                addText("IsMobile: " + data.device["ismobile"]);
+                addText("DeviceType: " + data.device["devicetype"]);
                 addText("SetHeaderHardwareAccept-CH: " + data.device["setheaderhardwareaccept-ch"]);
                 addText("SetHeaderBrowserAccept-CH: " + data.device["setheaderbrowseraccept-ch"]);
                 addText("JavascriptGetHighEntropyValues: " + data.device["javascriptgethighentropyvalues"]);
+                addText("IsMobile: " + data.device["ismobile"]);
+                addText("IsSmartPhone: " + data.device["issmartphone"]);
+                addText("MaxNumberOfSIMCards: " + data.device["maxnumberofsimcards"]);
+                addText("SupportedSIMCardTypes: " + data.device["supportedsimcardtypes"]);
+                addText("SupportedBearers: " + data.device["supportedbearers"]);
+                addText("IsWebApp: " + data.device["iswebapp"]);
                 addText("HardwareVendor: " + data.device["hardwarevendor"]);
                 addText("HardwareModel: " + data.device["hardwaremodel"]);
                 addText("HardwareName: " + data.device["hardwarename"]);
-                addText("DeviceType: " + data.device["devicetype"]);
-                addText("HardwareRank: " + data.device["hardwarerank"]);
-                addText("IsTablet: " + data.device["istablet"]);
-                addText("IsConsole: " + data.device["isconsole"]);
-                addText("IsSmartPhone: " + data.device["issmartphone"]);
-                addText("IsSmallScreen: " + data.device["issmallscreen"]);
-                addText("IsMediaHub: " + data.device["ismediahub"]);
-                addText("IsHardwareGroup: " + data.device["ishardwaregroup"]);
-                addText("IsScreenFoldable: " + data.device["isscreenfoldable"]);
-                addText("DeviceCertifications: " + data.device["devicecertifications"]);
-                addText("MaxNumberOfSIMCards: " + data.device["maxnumberofsimcards"]);
-                addText("SupportedSIMCardTypes: " + data.device["supportedsimcardtypes"]);
+                addText("HardwareFamily: " + data.device["hardwarefamily"]);
+                addText("OEM: " + data.device["oem"]);
+                addText("DeviceId: " + data.device["deviceid"]);
+                addText("Method: " + data.device["method"]);
+                addText("BrowserVendor: " + data.device["browservendor"]);
+                addText("BrowserName: " + data.device["browsername"]);
+                addText("BrowserVersion: " + data.device["browserversion"]);
+                addText("BrowserFamily: " + data.device["browserfamily"]);
+                addText("PlatformVendor: " + data.device["platformvendor"]);
+                addText("SetHeaderPlatformAccept-CH: " + data.device["setheaderplatformaccept-ch"]);
+                addText("PlatformName: " + data.device["platformname"]);
+                addText("PlatformVersion: " + data.device["platformversion"]);
             });
+        }
+    
+        buttonClicked = function() {
+            fod.complete(function (data) {
+                addText("State (by lat/lon): " + data.location["state"]);
+            addText("Region (by lat/lon): " + data.location["region"]);
+            addText("County (by lat/lon): " + data.location["county"]);
+            addText("Town (by lat/lon): " + data.location["town"]);
+            addText("StreetNumber (by lat/lon): " + data.location["streetnumber"]);
+            addText("Building (by lat/lon): " + data.location["building"]);
+            addText("Road (by lat/lon): " + data.location["road"]);
+            addText("ZipCode (by lat/lon): " + data.location["zipcode"]);
+            addText("Country (by lat/lon): " + data.location["country"]);
+            addText("CountryCode (by lat/lon): " + data.location["countrycode"]);
+            }, 'location');
         }
     
         addText = function(text) {
