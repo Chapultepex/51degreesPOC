@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Delegate-CH" content="sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com"/>
-    </head>
-    <body>
-        <h1>51Degrees cloud example NewAgent3</h1>
-        <button type="button" onclick="buttonClicked()">Use my location</button>
-        <div id="htmlExampleOutput"></div>
-    </body>
-          <script type="text/javascript" src="//cdn-4.convertexperiments.com/js/10045679-10045544.js">
+	<head>
+		<meta http-equiv="Delegate-CH" content="sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com"/>    
+	</head>
+	<body>
+		<h1>51Degrees cloud example New</h1>
+			<button type="button" onclick="buttonClicked()">Use my location</button>
+			<div id="htmlExampleOutput"></div>
+	</body>
+		<script async src="https://cloud.51degrees.com/api/v4/AQTIHPLXoUk9J80C2kg.js"></script>
+		<script type="text/javascript">        
+			window.onload = function() 
+			{            
+				fod.complete(function (data) 
+				{                // Fetch the properties from the JSON response and write to the page.                
+					addText("IsMobile: " + data.device["ismobile"]);                
+					addText("SetHeaderHardwareAccept-CH: " + data.device["setheaderhardwareaccept-ch"]);                
+					addText("SetHeaderBrowserAccept-CH: " + data.device["setheaderbrowseraccept-ch"]);                
+					addText("JavascriptGetHighEntropyValues: " + data.device["javascriptgethighentropyvalues"]);                
+					addText("HardwareVendor: " + data.device["hardwarevendor"]);
+					addText("HardwareModel: " + data.device["hardwaremodel"]);
+					addText("HardwareName: " + data.device["hardwarename"]);
+					addText("DeviceType: " + data.device["devicetype"]);
+					addText("HardwareRank: " + data.device["hardwarerank"]);
+					addText("IsTablet: " + data.device["istablet"]);
+					addText("IsConsole: " + data.device["isconsole"]);
+					addText("IsSmartPhone: " + data.device["issmartphone"]);
+					addText("IsSmallScreen: " + data.device["issmallscreen"]);
+					addText("IsMediaHub: " + data.device["ismediahub"]);
+					addText("IsHardwareGroup: " + data.device["ishardwaregroup"]);
+					addText("IsScreenFoldable: " + data.device["isscreenfoldable"]);
+					addText("DeviceCertifications: " + data.device["devicecertifications"]);
+					addText("MaxNumberOfSIMCards: " + data.device["maxnumberofsimcards"]);
+					addText("SupportedSIMCardTypes: " + data.device["supportedsimcardtypes"]);
+				}
+					);
+			}       
+					addText = function(text) 
+					{            
+						document.getElementById("htmlExampleOutput").innerHTML+=text + "<br>";        
+					}    
+		</script>
 </html>
